@@ -1,0 +1,37 @@
+#Lab1{
+	display: flex;
+	/* border: 1px solid red; */
+	margin-top: 60px;
+}
+a{
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	text-decoration: none;
+	color: white;
+	font-size: 24px;
+}
+a:active{
+	color: #999999;
+}
+h1{
+	margin-top: 60px;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#Lab1 img{
+	margin-top: 60px;
+	display: flex;
+	margin: 0 auto;
+}
+
+p{
+	margin-top: 40px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
