@@ -1,0 +1,19 @@
+.top{
+	margin-left: 10%;
+}
+
+hr{
+	width: 95%;
+}
+
+.top select{
+	width: 60px;
+}
+
+.Canvas1{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

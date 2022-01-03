@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>Lab1_e</title>
+		<!-- 顶点着色器和片元着色器代码 -->
+		<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			attribute vec4 aColor;
+			varying vec4 vColor;
+			void main(){
+				gl_Position = vPosition;
+				vColor=aColor;
+			}
+		</script>
+		<script id="fragment-shader" type="x-shader/x-fragment">
+			precision mediump float;
+			varying vec4 vColor;
+			void main(){
+				gl_FragColor = vColor;
+			}
+		</script>
+		<!-- 一组相关的JS库 -->
+		<script type="text/javascript" src="js/webgl-utils.js"></script>
+		<script type="text/javascript" src="js/initShaders.js"></script>
+		<!-- 绘制四边形的JS代码 -->
+		<script type="text/javascript" src="js/Canvas_e.js"></script>
+	</head>
+	<body onload="DrawTriangle()">
+		<div style="width: 100%; margin-top: 50px;" align="center">
+			<form name="myform">
+					高度：<input type="text" value="500" name="Height" /> <br /> 
+					宽度：<input type="text" value="500" name="Width" /> <br /> 
+					<input type="button" value="确定" onclick="DrawTriangle()" /> <br /> 
+			</form>
+			<div id="Triangle"></div>
+		</div>
+		</div>
+	</body>
+</html>
