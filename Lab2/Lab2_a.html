@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>Lab2_a</title>
+		<!-- 顶点着色器和片元着色器代码 -->
+		<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			attribute vec4 aColor;
+			varying vec4 vColor;
+			void main(){
+				gl_PointSize = 20.0;
+				gl_Position = vPosition;
+				vColor=aColor;
+			}
+		</script>
+		<!-- 四边形形 -->
+		<script id="fragment-shader" type="x-shader/x-fragment">
+			precision mediump float;
+			precision mediump float;
+			varying vec4 vColor;
+			void main(){
+				gl_FragColor = vColor;
+			}
+		</script>
+		<!-- 一组相关的JS库 -->
+		<script type="text/javascript" src="js/webgl-utils.js"></script>
+		<script type="text/javascript" src="js/initShaders.js"></script>
+		<script type="text/javascript" src="js/gl-matrix-min.js"></script>
+		<!-- 绘制四边形的JS代码 -->
+		<script type="text/javascript" src="js/Lab2_a.js"></script>
+	</head>
+	<body onload="DrawTriangle()">
+		
+		<div style="width: 100%; margin-top: 50px;" align="center">
+			<form name="myform">
+				层次: 	<input type="text" value="1" name="Count" style="margin-bottom: 5px;" /> 
+				颜色: 	<input type="text" style="width: 50px;" value="0" name="R" />
+						<input type="text" style="width: 50px;" value="0" name="G" />
+						<input type="text" style="width: 50px;" value="0" name="B" />
+						<input type="button" value="确定" style="margin: 5px;" onclick="DrawTriangle()" /> <br />
+			</form>
+			<!-- 获取到数据后，将三角型绘制到这里 -->
+			<div id="Triangle"></div>
+		</div>
+	</body>
+</html>
