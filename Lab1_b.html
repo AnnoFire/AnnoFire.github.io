@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab1_b</title>
+
+    <!-- 顶点着色器 -->
+    <script id="shader-vs" src="vshader.js" type="x-shader/x-vertex">
+       attribute vec3 aVertexPosition;
+       void main() {
+           // 直接将外部传入的顶点坐标作为最终坐标
+           gl_Position = vec4(aVertexPosition, 1.0);
+       }
+    </script>
+
+    <!-- 片段着色器 -->
+    <script id="shader-fs" type="x-shader/x-fragment">
+        // 设定 float 的精度, 这里我们使用中等精度
+        precision mediump float;
+
+        void main() {
+            // 输出为纯白色
+            gl_FragColor = vec4(1.0, 1.0, 0.0, 1.0);
+        }
+    </script>
+    <!--  加载js文件-->
+    <script src="js/Canvas_b.js"></script>
+</head>
+<!--页面加载完成后，执行JavaScript中的main()函数-->
+<body onload="main()">
+<!--定义<canvas>标签，通过width属性和height属性规定它是一片400×400的绘制区域-->
+<canvas id="Canvas_b" width="800" height="600">
+    <!--当浏览器不支持时，会直接忽略<canvas>标签，而直接显示下面这一行提示-->
+    Please use a browser that supports "canvas".
+</canvas>
+</body>
+</html>
